@@ -6,6 +6,7 @@
  *= require jquery.ui.aristo
  *= require jquery.atwho
  *= require chosen
+ *= require select2
  *= require_self
  *= require main
 */

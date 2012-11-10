@@ -55,3 +55,15 @@
           = link_to "Cancel", project_issues_path(@project), class: cancel_class
         - else
           = link_to "Cancel", project_issue_path(@project, @issue), class: cancel_class
+
+  :javascript
+
+    var default_issues_tags = ['low', 'medium', 'high', 'critical', 'new', 'in progress', 'developer complete', 'unable to replicate', 'feedback', 'wishlist', 'waitlist', 'rejected'];
+    var available_issues_tags = #{issue_tags.to_json};
+    available_issues_tags = available_issues_tags.concat( default_issues_tags );
+    available_issues_tags = available_issues_tags.uniqueArrayElem();
+
+    $('#issue_label_list').select2({
+      tags:available_issues_tags,
+      tokenSeparators: [","]
+    });

@@ -1,3 +1,8 @@
+Array::uniqueArrayElem = ->
+  output = {}
+  output[@[key]] = @[key] for key in [0...@length]
+  value for key, value of output
+
 window.updatePage = (data) ->
   $.ajax({type: "GET", url: location.href, data: data, dataType: "script"})
 
