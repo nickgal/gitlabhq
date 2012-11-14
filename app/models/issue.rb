@@ -7,7 +7,8 @@ class Issue < ActiveRecord::Base
 
   acts_as_taggable_on :labels
 
-  validates :description, length: { within: 0..2000 }
+  # Removed length limit to allow errbit to dump entire error reports
+  #validates :description, length: { within: 0..2000 }
 
   def self.open_for(user)
     opened.assigned(user)
